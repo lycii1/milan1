@@ -31,6 +31,7 @@
 	
 
 	body,ul, li, a, p, div,h1,h2,h3 {
+		font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 		box-sizing: border-box;
 	} 
 	p {
@@ -52,21 +53,42 @@
 		max-width: 1000px;
 		margin:0 auto;
 
+
 	}
 	.topbar {
 		height:80px;
-		background: url(download.jpg) top right no-repeat;
-		width:1000px;
 		
-		margin:0 auto;
-	
+		background-color: #000;
+		width:100%;
+		position: absolute;
+		left:0;
+		right:0;
+		top:0;	
+		z-index: 1
 	}
+	.topbar>.layout {
+		
+		background: url(download.jpg) top right no-repeat;
+		margin-top: -20px;
+		height:84px;
+		
+	}
+	.topbar>.layout:after {
+		content: "";
+		display: block;
+		clear: both;
+		margin-top: -14px;
+
+	}
+	
 	#logo {
 		float:left;
+		overflow:hidden;
+		
 	}
 
 	#logo img{
-		height:80px;
+		height:84px;
 
 	}
 	#navi {
@@ -82,9 +104,13 @@
 		margin-right: 20px;
 		font-size: 15px;
 	}
+	#navi a:hover {
+		color:yellow;
+	}
 	#welcome {
+		margin-top: 80px;
 		background: url(welcome.jpg);
-		height:700px;
+		height:900px;
 		background-size:cover;
 		background-repeat:no-repeat;
 
@@ -106,6 +132,7 @@
 	#history {
 		margin:0 auto;
 		margin-top: 100px;
+		padding-top: 100px;
 	}
 	#history>p {
 		text-align:center;
@@ -260,15 +287,43 @@
 	.person {
 		width:280px;
 		height:350px;
-		border:1px solid red;
+		border:2px solid red;
 		margin-top: 20px;
+		position:relative;
 
 	}
+	
+	.person>.photo:after {
+		content: "+";
+   		position: absolute;
+    	background-color: rgba(254,209,54,0.9);
+    	display: inline-block;
+    	padding: 81px 110px;
+    	top: -2px;
+    	right: -1px;
+    	color: #fff;
+    	font-size: 100px;
+    	z-index: -1;
+	}
 	.person img {
-		width:278px;
+		width:276px;
+		position: absolute;
+
+
+		
+	}
+	.person img:hover{
+		cursor:pointer;
+		opacity: 0.1;
+		
+
+	}
+	.person>h3 {
+		margin-top:294px;
 	}
 
 	.person h3,.person p {
+
 		line-height: 0.5;
 		text-align: center;;
 	}
@@ -328,22 +383,162 @@
 	.star a:hover{
 		opacity: 0.4;
 	}
+	#sponsor {
+		margin-top: 100px;
 
+	}
+	#sponsor>.layout:after {
+		content:"";
+		display: block;
+		clear:both;
+	}
+	#sponsor a {
+		display: inline-block;
+		float:left;
+		width:25%;
+		text-align: center;
+		margin-bottom: 100px;
+		vertical-align: center;
+	}
+	#funclub {
+		background: url(map.png) red  center;
+		padding-top:100px;
+		padding-bottom: 100px;
+	}
+
+	#funclub>.layout>p {
+		text-align: center;
+	}
+	#funclub>.layout:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	#leftrow {
+		width:50%;
+		float:left;
+	}
+	#leftrow:after {
+		content: "";
+
+	}
+	#funclub input[type="text"] {
+		display: block;
+		height:40px;
+		margin-top:20px;
+		width:100%;
+		border-radius: 5px;
+		float:left;
+		font-size: 20px;
+
+
+	}
+	#send {
+		text-align: center;
+		margin-top: 20px;
+	}
+	#funclub input[type="submit"]{
+
+		height:60px;
+		border-radius: 5px;
+		width:200px;
+		background-color: #000;
+		color:#fff;
+		font-size: 20px;
+		border:none;
+		cursor: pointer;
+
+	}
+	#funclub input[type="submit"]:hover {
+		opacity: 0.6;
+	}
+	#rightrow {
+		width:50%;
+		float:left;
+		padding-left: 20px;
+		margin-top: 20px;
+
+	}
+	#funclub textarea {
+		height:176px;
+		width:100%;
+		border-radius: 5px;
+		font-size: 20px;
+		resize:none;
+
+	}
+	#table {
+		width:100%;
+	}
+	#table:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+	footer>.layout {
+		margin-top: 30px;
+	}
+	#copyright {
+		width: 33.33%;
+		float:left;
+		margin-top: 9px;
+		text-align: center;
+
+	}
+	footer ul {
+		list-style: none;
+		width:33.33%;
+		float:left;
+		padding-left:126px;
+		padding-right: auto;
+	}
+
+	footer ul>li>a {
+		display: inline-block;
+		color:white;
+		text-decoration:none;
+		float:left;
+		margin:0 5px;
+
+	}
+
+	#userauthority {
+		width:33.33%;
+		float:left;
+		margin-top:21px;
+		text-align:center;
+	}
+
+	#userauthority>a {
+		display: inline-block;
+		margin-left: 10px;
+		color:white;
+		text-decoration: none;
+	}
+	footer a:hover {
+		color:red;
+	}
+	#userauthority>a:hover {
+		color: red;
+	}
 
 
 
 </style>
 <body>
-	<div class="topbar layout" >
-		<div id="logo"><img src="logo.png" alt=""></div>
+	<div class="topbar" >
+		<div class="layout">
+			<div id="logo"><img src="logo.png" alt=""></div>
 
-		<ul id="navi">
-			<li><a href="#history">球迷地带</a></li>
-			<li><a href="#legend">传奇永恒</a></li>
-			<li><a href="#palyer">球员介绍</a></li>
-			<li><a href="#champions">无上荣誉</a></li>
-			<li><a href="#history">光辉历史</a></li>
-		</ul>
+			<ul id="navi">
+				<li><a href="#funclub">球迷地带</a></li>
+				<li><a href="#legend">传奇永恒</a></li>
+				<li><a href="#palyer">球员介绍</a></li>
+				<li><a href="#champions">无上荣誉</a></li>
+				<li><a href="#history">光辉历史</a></li>
+			</ul>
+		</div>	
 	</div>
 
 	<div id="welcome" >
@@ -526,7 +721,7 @@
 				<div class="circleperson">
 					<img src="maldini.jpg" alt="">	
 				</div>
-				<h3>忠诚的象征</h3>
+				<h3>红黑传奇</h3>
 				<p><strong>马尔蒂尼</strong></p>
 				<p id="socialwork"><a href="#"><i class="iconfont icon-facebook"></i></a>
 				<a href="#"><i class="iconfont icon-twitter"></i></a>
@@ -537,7 +732,7 @@
 				<div class="circleperson">
 					<img src="maldini.jpg" alt="">	
 				</div>
-				<h3>忠诚的象征</h3>
+				<h3>红黑传奇</h3>
 				<p><strong>马尔蒂尼</strong></p>
 				<p id="socialwork"><a href="#"><i class="iconfont icon-facebook"></i></a>
 				<a href="#"><i class="iconfont icon-twitter"></i></a>
@@ -548,7 +743,7 @@
 				<div class="circleperson">
 					<img src="maldini.jpg" alt="">	
 				</div>
-				<h3>忠诚的象征</h3>
+				<h3>红黑传奇</h3>
 				<p><strong>马尔蒂尼</strong></p>
 				<p id="socialwork"><a href="#"><i class="iconfont icon-facebook"></i></a>
 				<a href="#"><i class="iconfont icon-twitter"></i></a>
@@ -557,5 +752,56 @@
 			</div>
 		</div>
 	</div>
+
+	<div id='sponsor'>
+		<div class="layout">
+			<a href="#"><img src="sponsor1.png" alt=""></a>
+			<a href="#"><img src="sponsor16.png" alt=""></a>
+			<a href="#"><img src="sponsor7.png" alt=""></a>
+			<a href="#"><img src="sponsor3.png" alt=""></a>
+		</div>
+	</div>
+
+	<div id="funclub">
+		<div class="layout">
+			<h2>MILAN FAN CLUB</h2>
+			<p>填写下表,我们会与你联系!</p>
+			<form action="#" method="post" name="funclub">
+				<div id="table">
+					<div id="leftrow">
+						<input type="text" placeholder="YOUR NAME*" name="name">
+						<input type="text" placeholder="YOUR EMAIL*" name="email">
+						<input type="text" placeholder="YOUR PHONE*" name="phone">
+					</div>
+					<div id="rightrow">
+						<textarea placeholder="YOUR MESSAGE*" rows="4" name="message"></textarea>	
+					</div>
+				</div>
+				<div id="send">
+				<input type="submit" value="SEND MESSAGE">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<footer>
+		<div class="layout">
+			<div id="copyright">
+				<p>Copyright © acmilan.com 2017</p>
+			</div>
+			<div id="conduct">
+				<ul> 
+					<li><a href="#"><i class="iconfont icon-facebook"></i></a> </li>   
+					<li><a href="#"><i class="iconfont icon-twitter"></i></a> </li>
+					<li><a href="#"><i class="iconfont icon-instagram"></i></a> </li> 
+				</ul>
+			</div>
+			<div id="userauthority">
+				<a href="#">Privacy Policy</a> 
+			    <a href="#">Terms of Use</a>
+			</div>
+
+		</div>
+	</footer>
 </body>
 </html>
